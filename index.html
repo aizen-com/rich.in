@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopShiva – Tera Apna 3D Amazon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@spline/viewer@1.0.49/dist/spline-viewer.js"></script>
+  <style>
+    body { margin:0; background:#000; color:white; font-family: 'Inter', sans-serif; }
+    .smooth { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="smooth">
+
+  <!-- Header -->
+  <div class="bg-black p-4 flex justify-between items-center sticky top-0 z-50 border-b border-gray-800">
+    <h1 class="text-3xl font-black bg-gradient-to-r from-yellow-400 to-pink-600 bg-clip-text text-transparent">ShopShiva</h1>
+    <div class="flex gap-4">
+      <button onclick="openMyStore()" class="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 rounded-full font-bold">My Store</button>
+      <button onclick="addProduct()" class="bg-yellow-500 text-black px-6 py-3 rounded-full font-bold">Sell Now</button>
+    </div>
+  </div>
+
+  <!-- 3D Hero Product -->
+  <div class="h-screen flex items-center justify-center">
+    <spline-viewer url="https://prod.spline.design/3D-Amazon-Scene.scene"></spline-viewer>
+  </div>
+
+  <!-- Products Grid -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-10 max-w-7xl mx-auto">
+    <!-- Repeat this block for products -->
+    <div class="bg-gray-900 rounded-3xl overflow-hidden hover:scale-105 transition">
+      <spline-viewer url="https://prod.spline.design/shoe-3d.scene"></spline-viewer>
+      <div class="p-6">
+        <h3 class="text-xl font-bold">Nike Air 3D</h3>
+        <p class="text-3xl font-black text-yellow-500">₹4,999</p>
+        <button class="w-full bg-gradient-to-r from-yellow-500 to-pink-600 py-4 rounded-full mt-4 font-bold">Buy Now</button>
+      </div>
+    </div>
+    <!-- Add more products here -->
+  </div>
+
+  <script>
+    function openMyStore() {
+      const username = prompt("Apna store name daalo (e.g. shiva, raju)");
+      if (username) window.location.href = `https://${username}.shopshiva.in`;
+    }
+
+    function addProduct() {
+      alert("Product add feature coming in 2 hours – tu soch le kya bechna hai!");
+    }
+  </script>
+</body>
+</html>
